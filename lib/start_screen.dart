@@ -9,8 +9,19 @@ class StartScreen extends StatelessWidget {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          const Image(
-              image: AssetImage('assets/images/quiz-logo.png'), width: 350),
+          Image.asset(
+            'assets/images/quiz-logo.png',
+            width: 300,
+            color: const Color.fromARGB(170, 255, 255, 255),
+            //Opacity is not recommended but still available for use
+            //
+            // Opacity(
+            //   opacity: 0.6,
+            //   child: Image.asset(
+            //     'assets/images/quiz-logo.png',
+            //     width: 300,
+            //   ),
+          ),
           const Padding(
             padding: EdgeInsets.symmetric(horizontal: 20, vertical: 40),
             child: Text(
