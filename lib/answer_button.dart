@@ -17,10 +17,13 @@ class AnswerButton extends StatelessWidget {
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(15),
         ),
-        elevation: 6,
+        //elevation: 6,
         padding: const EdgeInsets.symmetric(horizontal: 40, vertical: 10),
       ),
-      child: Text(answerText),
+      child: Text(
+        answerText,
+        textAlign: TextAlign.center,
+      ),
     );
   }
 }
