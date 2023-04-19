@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:quiz_app/data/questions.dart';
 import 'package:quiz_app/questions_summary.dart';
 
@@ -35,24 +36,38 @@ class ResultsScreen extends StatelessWidget {
     return SizedBox(
       width: double.infinity,
       child: Container(
-        margin: const EdgeInsets.all(40),
+        margin: const EdgeInsets.all(15),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Text(
-                'You answered $numCorrectQuestions out of $numTotalQuestions questions correctly!'),
-            const SizedBox(
-              height: 30,
+              'You answered $numCorrectQuestions out of $numTotalQuestions questions correctly!',
+              style: GoogleFonts.manrope(
+                  color: const Color.fromARGB(159, 233, 223, 234),
+                  fontSize: 20,
+                  fontWeight: FontWeight.bold),
+              textAlign: TextAlign.center,
             ),
-            QuestionsSummary(
-              summaryData: summaryData,
-            ),
-            const SizedBox(
-              height: 30,
-            ),
-            TextButton(
-              onPressed: () {},
-              child: const Text('Restart Quiz'),
+            Container(
+              margin: const EdgeInsets.all(30),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  QuestionsSummary(
+                    summaryData: summaryData,
+                  ),
+                  const SizedBox(
+                    height: 30,
+                  ),
+                  TextButton.icon(
+                    onPressed: () {},
+                    label: const Text('Restart Quiz'),
+                    icon: const Icon(Icons.restart_alt),
+                    style: TextButton.styleFrom(
+                        iconColor: Colors.white, foregroundColor: Colors.white),
+                  ),
+                ],
+              ),
             ),
           ],
         ),
